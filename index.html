@@ -12,6 +12,7 @@
     table { margin-right: 1em; margin-bottom: 1em; }
 
     .insert-delete-column, .insert-delete-row { position: relative; border: none; min-width: 1.9em; height: 1.9em; }
+    .delete-button, .insert-button { cursor: pointer; }
     .delete-button { text-decoration: none; color: red; }
     .insert-button { text-decoration: none; color: darkgreen; }
     .fuse-button a { text-decoration: none; color: blue; }
@@ -488,7 +489,7 @@ var module = function(customization) {
         for (var y = 0; y < height(mod); y++) {
             var tr = appendChild(tbody, 'tr', '');
             first_th = appendChild(tr, 'th', 'insert-delete-row');
-            first_th.appendChild(delete_row_button(y+1));
+            first_th.appendChild(delete_row_button(y));
             first_th.appendChild(insert_row_button(y+1));
             for (var x = 0; x < width(mod); x++) {
                 var cell = mod.m[y][x];
