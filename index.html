@@ -547,8 +547,20 @@ var module = function(customization) {
     }
 
     function set_current_mod(state, mod) {
-        state.current = state.stack.length;
+        state.stack.splice(state.current + 1, state.stack.length - state.current - 1);
+        state.current++;
         return state.stack[state.current] = mod;
+    }
+
+    function undo(state) {
+        state.current--;
+    }
+
+    function redo(state) {
+        state.current++;
+        if (state.current >= state.stack.length) {
+            state.current = state.stack.length - 1;
+        }
     }
 
     function create_state_from_mod(initial_mod) {
@@ -618,7 +630,9 @@ var module = function(customization) {
         create_state,
         serialize,
         deserialize,
-        update_state
+        update_state,
+        undo,
+        redo
     }
 }
 
