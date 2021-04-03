@@ -1,0 +1,24 @@
+/* License CC0 */
+textarea { width: 100%; border: none; resize: none; }
+
+td { vertical-align: top; border: thin solid gray; height: 4em; }
+
+table { border-collapse: collapse; }
+col.user-column-col { width: 15em; }
+col.delete-row-col { width: 2em; }
+col.insert-column-col { width: 2em; }
+table { margin-right: 1em; margin-bottom: 1em; }
+
+.insert-delete-column, .insert-delete-row { position: relative; border: none; min-width: 1.9em; height: 1.9em; }
+.delete-button, .insert-button { cursor: pointer; }
+.delete-button { text-decoration: none; color: red; }
+.insert-button { text-decoration: none; color: darkgreen; }
+.fuse-button a { text-decoration: none; color: blue; }
+.fuse-button { border: thin solid lightblue; background: lightcyan; min-width: 1.5em; min-height: 1.5em; text-align: center;
+                border-radius: 1em; opacity: 0.5; position: absolute; }
+.fuse-button:hover { opacity: 1; }
+
+.column-button.insert-button { position: absolute; bottom: 0.5em; right:  0;   transform: translateX(50%); }
+.row-button.insert-button    { position: absolute; right:  0.5em; bottom: 0;   transform: translateY(50%); }
+.column-button.delete-button { position: absolute; bottom: 0.5em; left:   50%; transform: translateX(-50%); }
+.row-button.delete-button    { position: absolute; right:  0.5em; top:    50%; transform: translateY(-50%); }
